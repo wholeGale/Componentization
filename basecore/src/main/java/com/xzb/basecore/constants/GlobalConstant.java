@@ -11,5 +11,7 @@ public final class GlobalConstant {
     private GlobalConstant(){
     }
 
+    public static final String DATA_KEY = "dataKey";
+    public static final String STUDENT_KEY = "StudentKey";
 
 }

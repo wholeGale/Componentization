@@ -7,7 +7,9 @@ import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.xzb.basecore.constants.GlobalConstant;
 import com.xzb.basecore.constants.RouterPathManager;
+import com.xzb.basecore.entitys.Student;
 
 /**
  * @Author: xiangzhenbiao
@@ -30,7 +32,11 @@ public class MainTabActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //利用Arouter进行模块间跳转，解耦
-                ARouter.getInstance().build(RouterPathManager.SHARE_PATH_SHARE_MAIN_ACTIVITY).navigation();
+                ARouter.getInstance()
+                        .build(RouterPathManager.SHARE_PATH_SHARE_MAIN_ACTIVITY)
+                        .withString(GlobalConstant.DATA_KEY, "app工程的value") //key:value
+                        .withParcelable(GlobalConstant.STUDENT_KEY,new Student("xzb", 26))
+                        .navigation();
             }
         });
     }
