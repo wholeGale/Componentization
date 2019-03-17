@@ -1,9 +1,9 @@
 <!-- 集成调试时用该AndroidManifest.xml 文件-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xzb.pay" >
+    package="com.xzb.share" >
 
     <application android:theme="@style/AppTheme">
-        <activity android:name="com.xzb.share.ShareMainActivity"/>
+        <activity android:name=".ShareMainActivity"/>
 
     </application>
 

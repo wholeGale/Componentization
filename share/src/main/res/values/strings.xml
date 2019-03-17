@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Share</string>
+    <string name="app_name">Share工程</string>
+    <string name="share_main_content">share工程-分享页</string>
+
 </resources>

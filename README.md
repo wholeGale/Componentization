@@ -9,10 +9,20 @@
 
 ### 组件化开发需要解决的问题
 #### 独立编译运行
-每个组件都是一个完整的整体，所以组件开发过程中要满足**单独运行**(做为App)及**集成调试**(做为Library)，这样还可以提升开发过程中项目的编译速度。  
+每个组件都是一个完整的整体，所以组件开发过程中要满足单独运行(做为App)及集成调试(做为Library)，这样还可以提升开发过程中项目的编译速度。  
 解决方案：
 - 利用Gradle动态配置工程类型/ApplicationId；
 - 动态加载不同目录的AndroidManifest文件；
+
+#### 组件间跳转
+每个组件模块内都有自己的界面，安卓原生提供的startActivity跳转时，会导入类路径，模块间耦合严重。
+解决方案：
+- 利用阿里开源的ARouter进行路由跳转；
+
+特别注意(踩坑记录)：
+- 每个组件工程的build.gradle中都要依赖annotationProcessor 'com.alibaba:arouter-compiler:x.x.x'(x.x.x要与compiler匹配，多组件间保持一致)。
+- build.gradle中support-annotations问题。
+- 主app的build.gradle中需要依赖子工程
 
 参考：
 - https://mp.weixin.qq.com/s/ubihF5bDbofZfKTT-Ou2gw
