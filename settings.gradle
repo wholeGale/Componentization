@@ -1,1 +1,1 @@
-include ':app', ':share', ':basecore'
+include ':app', ':share', ':basecore', ':login'

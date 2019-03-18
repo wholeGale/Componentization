@@ -33,4 +33,14 @@ public final class RouterConstants {
     public static final String SHARE_PAGE_SHARE_MAIN_ACTIVITY = "/share_main_activity";
 
 
+
+
+
+    /*———————————————————————————————— ↓↓↓↓ Login Path ↓↓↓↓ ————————————————————————————————*/
+
+    /**
+     * 登录主页
+     */
+    public static final String LOGIN_PAGE_LOGIN_MAIN_ACTIVITY = "/login_main_activity";
+
 }

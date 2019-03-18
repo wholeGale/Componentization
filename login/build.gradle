@@ -7,17 +7,19 @@ if(isAloneRun.toBoolean()){
 android {
     compileSdkVersion COMPILE_SDK_VERSION.toInteger()
 
+
+
     defaultConfig {
         // 独立运行时添加 applicationId ，集成调试时不需要
         if(isAloneRun.toBoolean()){
-            applicationId "com.xzb.share"
+            applicationId "com.xzb.login"
         }
+
         minSdkVersion MIN_SDK_VERSION.toInteger()
         targetSdkVersion TARGET_SDK_VERSION.toInteger()
-
         if(isAloneRun.toBoolean()){
-            versionCode SHARE_VERSION_CODE.toInteger()
-            versionName SHARE_VERSION_NAME
+            versionCode LOGIN_VERSION_CODE.toInteger()
+            versionName LOGIN_VERSION_NAME
         }else{
             versionCode VERSION_CODE.toInteger()
             versionName VERSION_NAME
@@ -59,10 +61,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    androidTestCompile('com.android.support:support-annotations:26.1.0') {
+    androidTestCompile('com.android.support:support-annotations:26.1.0') { //使用arouter时，support-annotations问题
         force = true
     }
     //依赖baseCore工程lib
     implementation project(':basecore')
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //多组件工程
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //多组件工程时，这里annotationProcessor依然需要
 }

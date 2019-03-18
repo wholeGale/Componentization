@@ -15,23 +15,27 @@ public final class RouterPathManager {
     /**
      * APP
      */
-    public static final String APP_PATH_HOST = "/app";
+    private static final String APP_PATH_HOST = "/app";
     /**
      * 分享
      */
-    public static final String SHARE_PATH_HOST = "/share";
+    private static final String SHARE_PATH_HOST = "/share";
     /**
      * 支付
      */
-    public static final String PAY_PATH_HOST = "/pay";
+    private static final String PAY_PATH_HOST = "/pay";
+    /**
+     * 登录
+     */
+    private static final String LOGIN_PATH_HOST = "/pay";
     /**
      * COMMON
      */
-    public static final String COMMON_PATH_HOST = "/common";
+    private static final String COMMON_PATH_HOST = "/common";
     /**
      * 拦截器
      */
-    public static final String APP_INTERCEPTOR_HOST = APP_PATH_HOST + "/interceptor";
+    private static final String APP_INTERCEPTOR_HOST = APP_PATH_HOST + "/interceptor";
 
 
 
@@ -56,6 +60,17 @@ public final class RouterPathManager {
      * 分享页
      */
     public static final String SHARE_PATH_SHARE_MAIN_ACTIVITY = SHARE_PATH_HOST + RouterConstants.SHARE_PAGE_SHARE_MAIN_ACTIVITY;
+
+
+
+
+
+    /*———————————————————————————————— ↓↓↓↓ Login Path ↓↓↓↓ ————————————————————————————————*/
+
+    /**
+     * 登录页
+     */
+    public static final String LOGIN_PATH_LOGIN_MAIN_ACTIVITY = LOGIN_PATH_HOST + RouterConstants.LOGIN_PAGE_LOGIN_MAIN_ACTIVITY;
 
 
 }

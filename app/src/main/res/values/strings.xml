@@ -2,6 +2,7 @@
     <string name="app_name">组件化demo</string>
     <string name="welcome_content">app工程-引导页</string>
     <string name="jump_to_share">跳转到分享页</string>
+    <string name="to_share">去分享</string>
     <string name="main_tab_content">app工程-主页</string>
 
 </resources>

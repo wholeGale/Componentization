@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Componentization.iml" filepath="$PROJECT_DIR$/Componentization.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/basecore/basecore.iml" filepath="$PROJECT_DIR$/basecore/basecore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/login/login.iml" filepath="$PROJECT_DIR$/login/login.iml" />
       <module fileurl="file://$PROJECT_DIR$/share/share.iml" filepath="$PROJECT_DIR$/share/share.iml" />
     </modules>
   </component>

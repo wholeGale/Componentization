@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- 独立运行时用该AndroidManifest.xml 文件-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xzb.share">
+    package="com.xzb.login">
 
     <application
         android:allowBackup="true"
@@ -11,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".ShareApp"
+        android:name=".LoginApp"
         >
-        <activity android:name=".ShareMainActivity">
+        <activity android:name=".LoginMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
