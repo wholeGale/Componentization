@@ -28,6 +28,11 @@ Android项目代码量达到一定程度，编译将是一件非常痛苦的事�
 - 利用Gradle动态配置工程类型/ApplicationId；
 - 动态加载不同目录的AndroidManifest文件；
 
+#### 资源冲突问题
+当分别开发模块时，容易出资源重复命名的问题，可以在build.gradle中设置
+> resourcePrefix "module1_"
+
+
 #### 组件间跳转
 每个组件模块内都有自己的界面，安卓原生提供的startActivity跳转时，会导入类路径，模块间耦合严重。
 解决方案：

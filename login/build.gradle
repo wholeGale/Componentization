@@ -33,6 +33,9 @@ android {
         }
     }
 
+    //通过给子模块设置不同的资源前缀，可以避免重复命名
+    resourcePrefix "loginlib_"
+
     sourceSets{
         main{
             //独立运行时与集成调试时使用不同的 AndroidManifest.xml 文件

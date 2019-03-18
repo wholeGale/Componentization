@@ -31,6 +31,8 @@ android {
         }
     }
 
+    resourcePrefix "sharelib_"
+
     sourceSets{
         main{
             //独立运行时与集成调试时使用不同的 AndroidManifest.xml 文件
