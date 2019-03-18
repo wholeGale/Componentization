@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xzb.share" >
 
-    <application android:theme="@style/AppTheme">
+    <application >
         <activity android:name=".ShareMainActivity"/>
 
     </application>

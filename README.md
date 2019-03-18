@@ -67,6 +67,14 @@ Android项目代码量达到一定程度，编译将是一件非常痛苦的事�
 我们可以通过Gradle3.0提供的新依赖方式**runtimeOnly**，通过runtimeOnly方式依赖时，依赖项仅在运行时对模块及其消费者可用，
 编译期间依赖项的代码对其消费者时完全隔离的。
 
+##### 资源隔离
+组件开发中不仅要实现代码的隔离，还要实现资源文件的隔离，解决代码隔离的 runtimeOnly 并不能做到资源隔离。
+通过 runtimeOnly 依赖组件后，在主项目中还是可以直接使用到组件中的资源文件。
+
+**解决办法：**
+我们可以在每个组件的build.gradle中添加**resourcePrefix**配置来固定这个组件中的资源前缀。不过resourcePrefix配置只能限定res中xml文件中
+定义的资源(包括layout文件名/colors/strings/styles等中的属性名)，并不能限定图片资源，所以我们在往组件中添加图片资源时要手动限制资源前缀，
+并将多个组件中都会用到的资源放入 Base 模块中。这样我们就可以在最大限度上实现组件间资源的隔离。
 
 参考：
 - https://mp.weixin.qq.com/s/ubihF5bDbofZfKTT-Ou2gw

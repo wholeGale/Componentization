@@ -20,7 +20,7 @@ public class ShareMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_share_main);
+        setContentView(R.layout.sharelib_activity_share_main);
 
         data = getIntent().getStringExtra(GlobalConstant.DATA_KEY);
         student = getIntent().getParcelableExtra(GlobalConstant.STUDENT_KEY);

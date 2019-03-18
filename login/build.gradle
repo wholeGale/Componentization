@@ -33,7 +33,9 @@ android {
         }
     }
 
-    //通过给子模块设置不同的资源前缀，可以避免重复命名
+    //通过给子模块设置不同的资源前缀，可以避免重复命名。
+    // 如果配置了resourcePrefix，其xml中定义的资源(包括layout文件名/colors/strings/styles等中的属性名)没有以resourcePrefix的值作为前缀，
+    // 在对应的xml中定义的资源会报红，不能限定图片资源
     resourcePrefix "loginlib_"
 
     sourceSets{
