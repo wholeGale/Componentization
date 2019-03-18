@@ -68,8 +68,9 @@ dependencies {
     //依赖baseCore工程lib
     implementation project(':basecore')
     if (!isAloneRun.toBoolean()) {
-        implementation project(':login')
-        implementation project(':share') //arouter跳转坑一：主app需要依赖share
+        //通过runtimeOnly方式依赖时，依赖项仅在运行时可用，编译期间依赖项的代码对其消费者是完全隔离的。
+        runtimeOnly project(':login')
+        runtimeOnly project(':share') //arouter跳转坑一：主app需要依赖share
     }
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
     //arouter跳转坑二：每个module都要依赖arouter-compiler
