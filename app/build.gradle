@@ -34,9 +34,13 @@ dependencies {
     androidTestCompile('com.android.support:support-annotations:26.1.0') {
         force = true
     }
-    //依赖baseCore工程lib
-    implementation project(':basecore')
-    implementation project(':login')
-    implementation project(':share') //arouter跳转坑一：主app需要依赖share
+    if(isAloneRun.toBoolean()){
+        //依赖baseCore工程lib
+        implementation project(':basecore')
+    }else{
+        implementation project(':login')
+        implementation project(':share') //arouter跳转坑一：主app需要依赖share
+    }
+
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //arouter跳转坑二：每个module都要依赖arouter-compiler
 }

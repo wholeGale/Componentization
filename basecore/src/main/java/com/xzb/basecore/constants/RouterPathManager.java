@@ -27,7 +27,7 @@ public final class RouterPathManager {
     /**
      * 登录
      */
-    private static final String LOGIN_PATH_HOST = "/pay";
+    private static final String LOGIN_PATH_HOST = "/login";
     /**
      * COMMON
      */
