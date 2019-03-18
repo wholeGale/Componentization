@@ -12,12 +12,11 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 public abstract class BaseApp extends Application {
 
-    public static boolean isDebug = true;
-
     @Override
     public void onCreate() {
         super.onCreate();
-        if (isDebug) {
+        //注：IS_DEBUG在gradle文件中debug和release节点配置
+        if (BuildConfig.IS_DEBUG) {
             // 打印日志
             ARouter.openLog();
             // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)

@@ -48,6 +48,12 @@ android {
     }
 
     buildTypes {
+        debug{
+            //application工程debug下给 applicationId 加后缀，这样就可以实现在release和debug中使用不同的applicationId
+            if(isAloneRun.toBoolean()){
+                applicationIdSuffix ".debug"
+            }
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

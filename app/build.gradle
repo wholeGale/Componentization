@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'xzbTestKeyAlias'
+            keyPassword '123456'
+            storePassword '123456'
+            storeFile file('/Volumes/work/AndroidStudioProjects/Componentization/keystore/test.jks')
+        }
+    }
     compileSdkVersion Integer.valueOf(COMPILE_SDK_VERSION)
     defaultConfig {
         applicationId "com.xzb.componentization"
@@ -16,16 +24,39 @@ android {
             }
         }
     }
+
+    //指定签名信息
+    signingConfigs {
+        debug{
+            storeFile file("/keystore/test.jks")
+            storePassword "123456"
+            keyAlias "xzbTestKeyAlias"
+            keyPassword "123456"
+        }
+        release{
+            storeFile file("/keystore/test.jks")
+            storePassword "123456"
+            keyAlias "xzbTestKeyAlias"
+            keyPassword "123456"
+        }
+    }
+
     buildTypes {
+        debug {
+            //application工程debug下给 applicationId 加后缀，这样就可以实现在release和debug中使用不同的applicationId
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.config
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
@@ -34,12 +65,12 @@ dependencies {
     androidTestCompile('com.android.support:support-annotations:26.1.0') {
         force = true
     }
-
     //依赖baseCore工程lib
     implementation project(':basecore')
-    if(!isAloneRun.toBoolean()){
+    if (!isAloneRun.toBoolean()) {
         implementation project(':login')
         implementation project(':share') //arouter跳转坑一：主app需要依赖share
     }
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //arouter跳转坑二：每个module都要依赖arouter-compiler
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    //arouter跳转坑二：每个module都要依赖arouter-compiler
 }

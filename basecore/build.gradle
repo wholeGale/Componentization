@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion COMPILE_SDK_VERSION.toInteger()
 
-
-
     defaultConfig {
         minSdkVersion MIN_SDK_VERSION.toInteger()
         targetSdkVersion TARGET_SDK_VERSION.toInteger()
@@ -19,8 +17,15 @@ android {
         }
     }
 
+
     buildTypes {
+        debug{
+            //在代码中以BuildConfig.IS_DEBUG形式来引用
+            buildConfigField("boolean", "IS_DEBUG", "true")
+
+        }
         release {
+            buildConfigField("boolean", "IS_DEBUG", "true")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
