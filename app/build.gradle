@@ -6,7 +6,7 @@ android {
             keyAlias 'xzbTestKeyAlias'
             keyPassword '123456'
             storePassword '123456'
-            storeFile file('/Volumes/work/AndroidStudioProjects/Componentization/keystore/test.jks')
+            storeFile file('../keystore/test.jks')
         }
     }
     compileSdkVersion Integer.valueOf(COMPILE_SDK_VERSION)
